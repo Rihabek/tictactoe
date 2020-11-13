@@ -1,3 +1,6 @@
+#ifndef PARAMETRE_H_
+#define PARAMETRE_H_
+
 #include <stdlib.h>
 #include <stdio.h>
 

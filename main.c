@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "parametre.h"
 
 #include <SDL2/SDL.h>
 
@@ -22,7 +23,7 @@ int main(int argc, char const *argv[])
 
       return EXIT_FAILURE;
   }
-  
+
   SDL_Renderer *renderer = SDL_CreateRenderer(window, -1,
                                               SDL_RENDERER_ACCELERATED |
                                               SDL_RENDERER_PRESENTVSYNC);
