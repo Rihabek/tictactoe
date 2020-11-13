@@ -14,3 +14,7 @@ parametre.h
 le 10/nov/2020:
 
 confirmation de projet avec le @prof, création des @fichier
+
+le 13/nov/2020:
+
+creation SDL window main.c et les parametre qu'on va utiliser pour le jeu 
