@@ -13,8 +13,21 @@ parametre.h
 
 le 10/nov/2020:
 
-confirmation de projet avec le @prof, création des @fichier
+-confirmation de projet avec le @prof, création des @fichier
 
 le 13/nov/2020:
 
-creation SDL window main.c et les parametre qu'on va utiliser pour le jeu 
+-creation SDL window main.c 
+
+14/nov/2020:
+
+-define les parametre qu'on va utiliser dans le programme
+-data_game.c
+-creation de makefile
+  qui contient:
+    debugging
+    clean
+    doxygen
+    les fichier src
+    les fichier bibleotheque
+    les fichier object

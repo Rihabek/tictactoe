@@ -3,6 +3,7 @@
 
 
 
+void switch_player(game_t *game);
 
 
 
