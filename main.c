@@ -25,12 +25,30 @@ int main(int argc, char const *argv[])
       return EXIT_FAILURE;
   }
 
-  // SDL_Renderer *renderer = SDL_CreateRenderer(window, -1,SDL_RENDERER_ACCELERATED|SDL_RENDERER_PRESENTVSYNC);
-  // if (renderer == NULL) {
-  //     SDL_DestroyWindow(window);
-  //     fprintf(stderr, "SDL_CreateRenderer Error: %s\n", SDL_GetError());
-  //     return EXIT_FAILURE;
-  // }
+  SDL_Renderer *renderer = SDL_CreateRenderer(window, -1,SDL_RENDERER_ACCELERATED|SDL_RENDERER_PRESENTVSYNC);
+  if (renderer == NULL)
+  {
+    SDL_DestroyWindow(window);
+    fprintf(stderr, "SDL_CreateRenderer Error: %s\n", SDL_GetError());
+    return EXIT_FAILURE;
+  }
+  SDL_Event e;
+  int quit = 0;
+  while (!quit)
+  {
+    while (SDL_PollEvent(&e))
+    {
+      switch (e.type)
+      {
+        case SDL_QUIT:
+            quit = 1;
+            break;
+
+        default: {}
+      }
+    }
+  }
+
 
   SDL_DestroyWindow(window);
   SDL_Quit();

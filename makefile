@@ -2,7 +2,9 @@ CFLAGS = -O3 -g `sdl2-config --cflags`
 LDFLAGS = `sdl2-config --libs` -lSDL2_ttf  -lm
 
 INC = data_game.h SDL_render.h parametre.h
-SRC = main.c data_game.c SDL_render.c
+SRC = main.c
+
+OBJ= $(SRC:.c=.o)
 
 PROG = tictactoe
 
