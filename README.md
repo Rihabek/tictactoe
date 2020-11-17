@@ -11,13 +11,27 @@ SDL_render.c
 SDL_render.h
 parametre.h
 
+
+compiler @tictactoe:
+  make
+
+executer @tictactoe:
+  ./tictactoe
+
+clean @tictactoe:
+  make clean
+  
+debug @tictactoe:
+  make debug
+
+
 le 10/nov/2020:
 
 -confirmation de projet avec le @prof, création des @fichier
 
 le 13/nov/2020:
 
--creation SDL window main.c 
+-creation SDL window main.c
 
 14/nov/2020:
 

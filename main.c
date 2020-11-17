@@ -1,6 +1,6 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "parametre.h"
+#include "SDL_render.h"
+#include "data_game.h"
 
 #include <SDL2/SDL.h>
 
@@ -32,21 +32,42 @@ int main(int argc, char const *argv[])
     fprintf(stderr, "SDL_CreateRenderer Error: %s\n", SDL_GetError());
     return EXIT_FAILURE;
   }
+
+  /*
+  les cases du jeu est empty
+  player is X
+  state game is runnign
+  */
+  game_t game = {
+      .board = { EMPTY, EMPTY, EMPTY,
+                 EMPTY, EMPTY, EMPTY,
+                 EMPTY, EMPTY, EMPTY },
+      .player = PLAYER_X,
+      .game_state = IS_RUNNING
+  };
+
+  const float width = SCREEN_WIDTH /N;
+  const float height = SCREEN_HEIGHT /N;
+
   SDL_Event e;
-  int quit = 0;
-  while (!quit)
+  while (game.game_state != QUIT_GAME)
   {
     while (SDL_PollEvent(&e))
     {
       switch (e.type)
       {
         case SDL_QUIT:
-            quit = 1;
+            game.game_state = QUIT_GAME;
             break;
 
         default: {}
       }
     }
+
+      SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+      SDL_RenderClear(renderer);
+      // render_game(renderer, &game);
+      SDL_RenderPresent(renderer);
   }
 
 

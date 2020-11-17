@@ -5,6 +5,7 @@
 
 void switch_player(game_t *game);
 
+void clicked_cell(game_t *game, int row, int column);
 
 
 #endif
