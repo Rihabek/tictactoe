@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
 {
   SDL_Window *window;
   // initialisation SDL
-  if (SDL_Init(SDL_INIT_VIDEO) != 0)
+  if (SDL_Init(SDL_INIT_VIDEO| SDL_INIT_AUDIO ) < 0)
   {
       fprintf(stderr, "Could not initialize sdl2: %s\n", SDL_GetError());
 
@@ -50,6 +50,8 @@ int main(int argc, char const *argv[])
   SDL_Event a;
   while (game.game_state != QUIT_GAME)
   {
+    playMusic("music.wav", SDL_MIX_MAXVOLUME);
+
     while (SDL_PollEvent(&a))
     {
       switch (a.type)

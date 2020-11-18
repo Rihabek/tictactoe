@@ -1,5 +1,5 @@
 /**
- *:b  \file data_game.h
+ *  \file data_game.h
  * \brief la logique du jeu
  * \@author Belkhadiri rihab
   * \game_state

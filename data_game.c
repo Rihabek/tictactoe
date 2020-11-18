@@ -13,7 +13,8 @@ void switch_player(game_t *game)
 
 void player_turn(game_t *game, int row, int col)
 {
-    if (game->table[row * N + col] == EMPTY) {
+    if (game->table[row * N + col] == EMPTY)
+    {
         game->table[row * N + col] = game->player;
         switch_player(game);
         // game_over_condition(game);
@@ -24,7 +25,8 @@ void reset_game(game_t *game)
 {
     game->player = PLAYER_X;
     game->game_state = IS_RUNNING;
-    for (int i = 0; i < N * N; ++i) {
+    for (int i = 0; i < N * N; ++i)
+    {
         game->table[i] = EMPTY;
     }
 }
