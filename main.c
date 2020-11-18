@@ -48,7 +48,7 @@ int main(int argc, char const *argv[])
       .game_state = IS_RUNNING
   };
   initAudio();
-  playMusic("music.wav", SDL_MIX_MAXVOLUME);
+  playMusic("african.wav", SDL_MIX_MAXVOLUME);
 
   SDL_Event a;
   while (game.game_state != QUIT_GAME)
@@ -69,9 +69,9 @@ int main(int argc, char const *argv[])
         default: {}
       }
     }
-      /*
-      ce fonction SDL_SetRenderDrawColor mettre un background noir
-      */
+    /*
+    ce fonction SDL_SetRenderDrawColor mettre une background noir
+    */
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
     render_game(renderer,&game);
