@@ -1,3 +1,11 @@
+/**
+ *:b  \file data_game.h
+ * \brief la logique du jeu
+ * \@author Belkhadiri rihab
+  * \game_state
+ */
+#include "parametre.h"
+
 #ifndef DATA_GAME_H_
 #define DATA_GAME_H_
 

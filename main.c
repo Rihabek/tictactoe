@@ -2,6 +2,7 @@
 #include "SDL_render.h"
 #include "data_game.h"
 
+
 #include <SDL2/SDL.h>
 
 
@@ -36,38 +37,41 @@ int main(int argc, char const *argv[])
   /*
   les cases du jeu est empty
   player is X
-  state game is runnign
+  state game is running
   */
   game_t game = {
-      .board = { EMPTY, EMPTY, EMPTY,
+      .table = { EMPTY, EMPTY, EMPTY,
                  EMPTY, EMPTY, EMPTY,
                  EMPTY, EMPTY, EMPTY },
       .player = PLAYER_X,
       .game_state = IS_RUNNING
   };
 
-  const float width = SCREEN_WIDTH /N;
-  const float height = SCREEN_HEIGHT /N;
-
-  SDL_Event e;
+  SDL_Event a;
   while (game.game_state != QUIT_GAME)
   {
-    while (SDL_PollEvent(&e))
+    while (SDL_PollEvent(&a))
     {
-      switch (e.type)
+      switch (a.type)
       {
         case SDL_QUIT:
             game.game_state = QUIT_GAME;
             break;
 
+        case SDL_MOUSEBUTTONDOWN:
+            clicked_cell(&game, a.button.y/HEIGHT, a.button.x/WIDTH);
+            break;
+
         default: {}
       }
     }
-
-      SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-      SDL_RenderClear(renderer);
-      // render_game(renderer, &game);
-      SDL_RenderPresent(renderer);
+      /*
+      ce fonction SDL_SetRenderDrawColor mettre un background noir
+      */
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_RenderClear(renderer);
+    render_game(renderer,&game);
+    SDL_RenderPresent(renderer);
   }
 
 
