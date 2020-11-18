@@ -3,7 +3,7 @@ LDFLAGS = `sdl2-config --libs` -lSDL2_ttf  -lm
 CCLINK = -lGL -lGLU -lSDL
 
 INC = data_game.h SDL_render.h parametre.h audio.h
-SRC = main.c SDL_render.c data_game.c 
+SRC = main.c SDL_render.c data_game.c audio.c
 
 OBJ = $(SRC:%.c=%.o)
 

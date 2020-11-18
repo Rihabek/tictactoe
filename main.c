@@ -1,6 +1,7 @@
 #include "parametre.h"
 #include "SDL_render.h"
 #include "data_game.h"
+#include "audio.h"
 
 
 #include <SDL2/SDL.h>
@@ -35,7 +36,7 @@ int main(int argc, char const *argv[])
   }
 
   /*
-  les cases du jeu est empty
+  les cases du jeu sont empty(vide)
   player is X
   state game is running
   */
@@ -46,11 +47,12 @@ int main(int argc, char const *argv[])
       .player = PLAYER_X,
       .game_state = IS_RUNNING
   };
+  initAudio();
+  playMusic("music.wav", SDL_MIX_MAXVOLUME);
 
   SDL_Event a;
   while (game.game_state != QUIT_GAME)
   {
-    playMusic("music.wav", SDL_MIX_MAXVOLUME);
 
     while (SDL_PollEvent(&a))
     {
@@ -74,7 +76,9 @@ int main(int argc, char const *argv[])
     SDL_RenderClear(renderer);
     render_game(renderer,&game);
     SDL_RenderPresent(renderer);
+
   }
+  endAudio();
 
 
   SDL_DestroyWindow(window);
