@@ -49,7 +49,9 @@ int main(int argc, char const *argv[])
   };
 
   initAudio();
-  playMusic("African1.wav", SDL_MIX_MAXVOLUME);
+  // playMusic("African1.wav", SDL_MIX_MAXVOLUME);
+  playMusic("music.wav", SDL_MIX_MAXVOLUME);
+
 
   SDL_Event a;
   while (game.game_state != QUIT_GAME)
