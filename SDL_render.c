@@ -1,5 +1,6 @@
 #include "SDL_render.h"
 #include <math.h>
+#include <SDL2/SDL2_gfxPrimitives.h>
 
 
 
@@ -41,21 +42,75 @@ void render_lines(SDL_Renderer *renderer,const SDL_Color *color)
 
   for (int i = 1; i < N; i++)
   {
+    // creation d'un ligne verticale
     SDL_RenderDrawLine(renderer,i * WIDTH, 0, i * WIDTH, SCREEN_HEIGHT);
+    // creation des ligne horizontal
     SDL_RenderDrawLine(renderer,0, i * HEIGHT,SCREEN_WIDTH, i * HEIGHT);
   }
 }
 
+/*
+/pour creer une linge ainsi "/" il faut calculer
+/un carre dans la case pour
+/ difinir le centre s = min(height,width)/4
+**/
+void render_xLine(SDL_Renderer *renderer, int row , int col, const SDL_Color *color)
+{
+    const float inside_case = fmin(WIDTH,HEIGHT) * 0.24; //min(height,width)/4
+    const float center_case_x = WIDTH * 0.5 + col * WIDTH;
+    const float center_case_y = HEIGHT * 0.5 + row * HEIGHT;
+    // draw une ligne comme ca /
+    thickLineRGBA(renderer, center_case_x - inside_case,
+                            center_case_y - inside_case,
+                            center_case_x + inside_case,
+                            center_case_y + inside_case,
+                            5,
+                            color->r,
+                            color->g,
+                            color->b,
+                            255);
+    // draw une ligne comme ca "\"
+    thickLineRGBA(renderer, center_case_x + inside_case,
+                            center_case_y - inside_case,
+                            center_case_x - inside_case,
+                            center_case_y + inside_case,
+                            5,
+                            color->r,
+                            color->g,
+                            color->b,
+                            255);
+}
+
+void render_oCircle(SDL_Renderer *renderer, int row , int col, const SDL_Color *color)
+{
+
+}
 void render_table(SDL_Renderer *renderer,
                   const int *table,
                   const SDL_Color *player_x_color,
                   const SDL_Color *player_o_color)
 {
-    
+    for (int i = 0; i < N; i++)
+    {
+      for (int j = 0; j < N; j++)
+      {
+        switch (table[i * N + j])
+        {
+          case PLAYER_X:
+            render_xLine(renderer, i , j, player_x_color);
+            break;
+          case PLAYER_O:
+            render_oCircle(renderer, i , j, player_o_color);
+            break;
 
-}
+          default: {}
+        }
+      }
+    }
 
-void render_is_running(SDL_Renderer *renderer, const game_t *game)
+  }
+
+  void render_is_running(SDL_Renderer *renderer, const game_t *game)
 {
     render_lines(renderer, &LINE_COLOR);
     render_table(renderer, game->table, &PLAYER_X_COLOR, &PLAYER_O_COLOR);

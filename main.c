@@ -44,11 +44,12 @@ int main(int argc, char const *argv[])
       .table = { EMPTY, EMPTY, EMPTY,
                  EMPTY, EMPTY, EMPTY,
                  EMPTY, EMPTY, EMPTY },
-      .player = PLAYER_X,
+      .player = PLAYER_O,
       .game_state = IS_RUNNING
   };
+
   initAudio();
-  playMusic("african.wav", SDL_MIX_MAXVOLUME);
+  playMusic("African1.wav", SDL_MIX_MAXVOLUME);
 
   SDL_Event a;
   while (game.game_state != QUIT_GAME)

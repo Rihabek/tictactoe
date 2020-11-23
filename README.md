@@ -20,7 +20,7 @@ executer @tictactoe:
 
 clean @tictactoe:
   make clean
-  
+
 debug @tictactoe:
   make debug
 
@@ -45,3 +45,10 @@ le 13/nov/2020:
     les fichier src
     les fichier bibleotheque
     les fichier object
+
+
+15-23/nov/2020:
+
+- SDL_render.c creation des function uitilil pour rendre le jeu
+- Sepparation des fichier src qui contient les bibleotheque et le file music , et le makefile.
+- Mise en place d'une function clicked cell qui prends 3 parametre game et row et col. qui prends en charge l'état du jeu, si le jeu IS_RUNNING alors player_turn() sinon reset_game() tout les cases devient EMPTY et le jeu redemare  
