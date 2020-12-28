@@ -49,6 +49,17 @@ le 13/nov/2020:
 
 15-23/nov/2020:
 
-- SDL_render.c creation des function uitilil pour rendre le jeu
+- SDL_render.c creation des function pour rendre le jeu
 - ajout du sons pendant le jeu
 - Mise en place d'une function clicked cell qui prends 3 parametre game et row et col. qui prends en charge l'état du jeu, si le jeu IS_RUNNING alors player_turn() sinon reset_game() tout les cases devient EMPTY et le jeu redemare  
+
+
+le 27/noV/2020:
+- cretaation d'un circle avec la bibleotheque SDL2_gfxPrimitives en utilisant la function filledCircleRGBA() et apres et cree une autre circle en utilisant la meme function pour avoir une ligne circle car apparmant il n'y a pas une function qui nous permets de creer une ligne circle.
+
+
+a faire :
+des touche rejoue et quitter
+page d'accuile***
+fichier d'entrer
+allocation memoir

@@ -2,10 +2,10 @@ CFLAGS = -O3 -g `sdl2-config --cflags`
 LDFLAGS = `sdl2-config --libs` -lSDL2_ttf -lSDL2_gfx -lm
 CCLINK = -lGL -lGLU -lSDL
 
-INC = data_game.h SDL_render.h parametre.h audio.h SDL2_gfxPrimitives.h SDL2_gfxPrimitives_font.h
-SRC = main.c SDL_render.c data_game.c audio.c SDL2_gfxPrimitives.c
+INC = data_game.h SDL_render.h parametre.h fichier.h audio.h SDL2_gfxPrimitives.h SDL2_gfxPrimitives_font.h
+SRC = main.c SDL_render.c data_game.c audio.c fichier.c SDL2_gfxPrimitives.c
 
-OBJ = main.c SDL_render.o data_game.o audio.o SDL2_gfxPrimitives.o
+OBJ = main.c SDL_render.o data_game.o audio.o fichier.o SDL2_gfxPrimitives.o
 
 
 PROG = tictactoe

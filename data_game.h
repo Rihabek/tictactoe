@@ -9,7 +9,9 @@
 #ifndef DATA_GAME_H_
 #define DATA_GAME_H_
 
+void player_turn(game_t *game, int row, int column);
 
+void reset_game(game_t *game);
 
 void switch_player(game_t *game);
 

@@ -26,7 +26,7 @@ const SDL_Color PLAYER_X_COLOR =
 const SDL_Color PLAYER_O_COLOR =
 {
   .r = 0,
-  .g = 128,
+  .g = 100,
   .b = 0
 };
 
@@ -36,6 +36,8 @@ const SDL_Color TIE_COLOR =
   .g = 100,
   .b = 100
 };
+
+
 void render_lines(SDL_Renderer *renderer,const SDL_Color *color)
 {
   SDL_SetRenderDrawColor(renderer,color->r,color->g,color->b, 255);
@@ -83,8 +85,20 @@ void render_xLine(SDL_Renderer *renderer, int row , int col, const SDL_Color *co
 
 void render_oCircle(SDL_Renderer *renderer, int row , int col, const SDL_Color *color)
 {
+  // calculer le centre de la case
+  const float inside_case = fmin(WIDTH,HEIGHT) * 0.24; //min(height,width)/4
+  const float center_case_x = WIDTH * 0.5 + col * WIDTH;
+  const float center_case_y = HEIGHT * 0.5 + row * HEIGHT;
+  // en fait une circle apre une autre circle en noir
+  filledCircleRGBA(renderer,
+                    center_case_x, center_case_y, inside_case + 5,
+                    color->r, color->g, color->b, 255);
+  filledCircleRGBA(renderer,
+                    center_case_x,center_case_y,inside_case - 5,
+                    0, 0, 0, 255);
 
 }
+
 void render_table(SDL_Renderer *renderer,
                   const int *table,
                   const SDL_Color *player_x_color,

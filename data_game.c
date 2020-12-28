@@ -1,6 +1,17 @@
 #include "data_game.h"
 #include "parametre.h"
 
+// void player_x_won(game_t *game, int row, int col)
+// {
+//   if (game->table[row * N + col] == PLAYER_X)
+//   {
+//
+//   }
+// }
+// void game_over_condition(game_t *game)
+// {
+//   game->player = PLAYER
+// }
 
 void switch_player(game_t *game)
 {
@@ -33,10 +44,10 @@ void reset_game(game_t *game)
     }
 }
 
-void clicked_cell(game_t *game, int row, int column)
+void clicked_cell(game_t *game, int row, int col)
 {
     if (game->game_state == IS_RUNNING) {
-        player_turn(game, row, column);
+        player_turn(game, row, col);
     } else {
         reset_game(game);
     }
