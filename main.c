@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
       return EXIT_FAILURE;
   }
 
-  window = SDL_CreateWindow("SDL2 window",100, 100,SCREEN_WIDTH, SCREEN_HEIGHT,SDL_WINDOW_OPENGL);
+  window = SDL_CreateWindow("TicTacToe",100, 100,SCREEN_WIDTH, SCREEN_HEIGHT,SDL_WINDOW_OPENGL);
 
   if (window == NULL)
   {
@@ -44,13 +44,13 @@ int main(int argc, char const *argv[])
       .table = { EMPTY, EMPTY, EMPTY,
                  EMPTY, EMPTY, EMPTY,
                  EMPTY, EMPTY, EMPTY },
-      .player = PLAYER_O,
+      .player = PLAYER_X,
       .game_state = IS_RUNNING
   };
 
   initAudio();
-  // playMusic("African1.wav", SDL_MIX_MAXVOLUME);
-  playMusic("music.wav", 10);
+  playMusic("African1.wav", 10);
+  // playMusic("music.wav", 10);
 
   FILE* fichier;
   fichier_txt(fichier);
@@ -75,7 +75,7 @@ int main(int argc, char const *argv[])
       }
     }
     /*
-    ce fonction SDL_SetRenderDrawColor mettre une background noir
+     fonction SDL_SetRenderDrawColor mettre une background noir
     */
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);

@@ -3,8 +3,6 @@
 
 char** fichier_txt(FILE* fichier)
 {
-  // int nb = 60;
-  // char** tab[][];
   char mode = 0;
   fichier = fopen("tictactoe.txt","r");
 
@@ -13,8 +11,6 @@ char** fichier_txt(FILE* fichier)
     printf("Error impossible de lire le fichier: %s\n", SDL_GetError());
   }
 
-
-  // mode = fgetc(fichier);
   while ( mode != EOF)
   {
     mode = fgetc(fichier);

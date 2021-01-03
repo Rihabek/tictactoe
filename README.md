@@ -51,7 +51,7 @@ le 13/nov/2020:
 
 - SDL_render.c creation des function pour rendre le jeu
 - ajout du sons pendant le jeu
-- Mise en place d'une function clicked cell qui prends 3 parametre game et row et col. qui prends en charge l'état du jeu, si le jeu IS_RUNNING alors player_turn() sinon reset_game() tout les cases devient EMPTY et le jeu redemare  
+- Mise en place d'une function clicked case qui prends 3 parametre game et row et col. qui prends en charge l'état du jeu, si le jeu IS_RUNNING alors player_turn() sinon reset() tout les cases devient EMPTY et le jeu redemare  
 
 
 le 27/noV/2020:
