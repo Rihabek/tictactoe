@@ -11,9 +11,15 @@
 
 void player_turn(game_t *game, int row, int column);
 
-void reset(game_t *game);
+int won_game(game_t *game,  int player);
+
+void game_over_condition(game_t *game);
+
+int count_cases(const int *table, int cell);
 
 void switch_player(game_t *game);
+
+void reset(game_t *game);
 
 void clicked_cell(game_t *game, int row, int column);
 
