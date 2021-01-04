@@ -1,7 +1,7 @@
 /**
  *  \file data_game.h
  * \brief la logique du jeu
- * \@author Belkhadiri rihab
+ * \@author Belkhadiri rihab et amraoui el mehdi 
   * \game_state
  */
 #include "parametre.h"
