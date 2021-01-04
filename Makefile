@@ -1,5 +1,5 @@
 CFLAGS = -O3 -g `sdl2-config --cflags`
-LDFLAGS = `sdl2-config --libs` -lSDL2_ttf -lSDL2_gfx -lm
+LDFLAGS = `sdl2-config --libs` -lSDL2_gfx -lm
 CCLINK = -lGL -lGLU -lSDL
 
 INC = data_game.h SDL_render.h parametre.h fichier.h audio.h SDL2_gfxPrimitives.h SDL2_gfxPrimitives_font.h
