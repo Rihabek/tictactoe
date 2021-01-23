@@ -38,6 +38,10 @@ int won_game(game_t *game,  int player)
     {
       return 1;
     }
+    
+    // if the counter row and col didnt reset at 0 it cant works
+    // correctly it will continue aat counting without reset at 0
+
     counter_row = 0;
     counter_coll = 0;
 
